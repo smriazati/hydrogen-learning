@@ -13,11 +13,12 @@
     "build:client": "vite build --outDir dist/client --manifest",
     "build:server": "vite build --outDir dist/server --ssr @shopify/hydrogen/platforms/node",
     "build:worker": "cross-env WORKER=true vite build --outDir dist/worker --ssr @shopify/hydrogen/platforms/worker",
+    "start": "node server.js",
     "serve": "node --enable-source-maps dist/server",
     "preview": "npx @shopify/hydrogen-cli@latest preview",
     "test": "WATCH=true vitest",
     "test:ci": "npm run build && vitest run",
-    "heroku": "npm run build:client && npm run build:server && npm run build:worker && npm run serve"
+    "heroku": "npm run build:client && npm run build:server && npm run build:worker && npm run start"
   },
   "prettier": "@shopify/prettier-config",
   "devDependencies": {
